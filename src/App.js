@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ReduxApp } from './Redux/ReduxApp.js';
+import { AddItem } from './AddItem.js'
 import './App.css';
 
 function App() {
+  const DATA = [
+    'Scone',
+    'Welsh Cakes',
+    'Pastel de Nata',
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bakery List</h1>
+      <ReduxApp data={DATA} />
+      {/* <ContextApp className="context-app" data = {DATA}/> */}
+      <AddItem />
     </div>
   );
 }
