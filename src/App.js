@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReduxApp } from './Redux/ReduxApp.js';
+import { ReduxApp } from './redux/ReduxApp.js';
 import { AddItem } from './AddItem.js'
 import './App.css';
 

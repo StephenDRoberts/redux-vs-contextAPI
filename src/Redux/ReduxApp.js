@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Table } from 'react-bootstrap';
+import React, { useState } from './node_modules/react';
+import { Table } from './node_modules/react-bootstrap';
 
 export const ReduxApp = (props) => {
   
