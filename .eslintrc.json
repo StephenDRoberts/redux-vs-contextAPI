@@ -1,18 +1,16 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "amd": true,  // for 'require()'
+        "mocha": true,
+        "jest": true
     },
-    "extends": [
-        "airbnb"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "modules": true
         },
         "ecmaVersion": 2018,
         "sourceType": "module"
@@ -20,6 +18,130 @@
     "plugins": [
         "react"
     ],
+    "globals":  {
+        "process": true
+    },
+    "settings": {
+        "react": {
+            "version": "16.4.0"
+        }
+    },
     "rules": {
+        "no-console": "off",
+        "react/display-name": "off",
+        "react/prop-types": "off",  
+        "comma-dangle": "warn",
+        "indent": [
+            "warn",
+            4,
+            {"SwitchCase": 1}
+        ],
+        "linebreak-style": [
+            "warn",
+            "unix"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "semi": [
+            "warn",
+            "always",
+            {"omitLastInOneLineBlock": true}
+        ],
+        "no-multiple-empty-lines": [
+            "warn",
+            {
+                "max": 1,
+                "maxEOF": 1
+            }
+        ],
+        "space-in-parens": [
+            "warn",
+            "never"
+        ],
+        "keyword-spacing": [
+            "warn",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "spaced-comment": [
+            "warn",
+            "always"
+        ],
+        "space-infix-ops": "warn",
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
+        "constructor-super": "warn",
+        "for-direction": "warn",
+        "getter-return": "warn",
+        "no-case-declarations": "warn",
+        "no-class-assign": "warn",
+        "no-compare-neg-zero": "warn",
+        "no-cond-assign": "warn",
+        "no-const-assign": "warn",
+        "no-constant-condition": "warn",
+        "no-control-regex": "warn",
+        "no-debugger": "warn",
+        "no-delete-var": "warn",
+        "no-dupe-args": "warn",
+        "no-dupe-class-members": "warn",
+        "no-dupe-keys": "warn",
+        "no-duplicate-case": "warn",
+        "no-empty": "warn",
+        "no-empty-character-class": "warn",
+        "no-empty-pattern": "warn",
+        "no-ex-assign": "warn",
+        "no-extra-boolean-cast": "warn",
+        "no-extra-semi": "warn",
+        "no-fallthrough": "warn",
+        "no-func-assign": "warn",
+        "no-global-assign": "warn",
+        "no-inner-declarations": "warn",
+        "no-invalid-regexp": "warn",
+        "no-irregular-whitespace": "warn",
+        "no-mixed-spaces-and-tabs": "warn",
+        "no-new-symbol": "warn",
+        "no-obj-calls": "warn",
+        "no-octal": "warn",
+        "no-redeclare": "warn",
+        "no-regex-spaces": "warn",
+        "no-self-assign": "warn",
+        "no-sparse-arrays": "warn",
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unexpected-multiline": "warn",
+        "no-unreachable": "warn",
+        "no-unsafe-finally": "warn",
+        "no-unsafe-negation": "warn",
+        "no-unused-labels": "warn",
+        "no-unused-vars": "warn",
+        "no-useless-escape": "warn",
+        "require-yield": "warn",
+        "use-isnan": "warn",
+        "valid-typeof": "warn",
+        "react/jsx-key": "warn",
+        "react/jsx-no-comment-textnodes": "warn",
+        "react/jsx-no-duplicate-props": "warn",
+        "react/jsx-no-target-blank": "warn",
+        "react/jsx-no-undef": "warn",
+        "react/jsx-uses-react": "warn",
+        "react/jsx-uses-vars": "warn",
+        "react/no-children-prop": "warn",
+        "react/no-danger-with-children": "warn",
+        "react/no-deprecated": "warn",
+        "react/no-direct-mutation-state": "warn",
+        "react/no-find-dom-node": "warn",
+        "react/no-is-mounted": "warn",
+        "react/no-render-return-value": "warn",
+        "react/no-string-refs": "warn",
+        "react/no-unescaped-entities": "warn",
+        "react/no-unknown-property": "warn",
+        "react/react-in-jsx-scope": "warn",
+        "react/require-render-return": "warn"
     }
 }

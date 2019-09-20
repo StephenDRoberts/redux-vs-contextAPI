@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.redux-app{
+  margin: auto;
+  margin-bottom: 20px;
+}

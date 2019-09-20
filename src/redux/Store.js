@@ -1,8 +1,6 @@
-import {combineReducers, createStore, applyMiddleware} from 'redux'
+import {combineReducers, createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import {dataReducer} from './modules/dataReducer.js'
-import {changeProjectReducer} from './modules/changeProject.js'
-import {loginReducer} from './modules/loginReducer.js'
+import {itemReducer} from './modules/itemReducer.js';
 
 const reducer = combineReducers({
     itemReducer
