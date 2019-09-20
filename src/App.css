@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.redux-app {
-  width: 50%;
-  left: 10px;
+.redux-app{
+  margin: auto;
+  margin-bottom: 20px;
 }
