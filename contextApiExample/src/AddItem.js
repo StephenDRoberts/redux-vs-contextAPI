@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useStatem, useContext } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { handleAddItem } from './redux/modules/itemReducer.js';
 
-const AddItem = (props) => {
+export const AddItem = () => {
 
     const [displayModal, updateDisplayModal] = useState(false);
     const [input, updateInput] = useState('');
+    const { value, updateData } = useContext(DataContext)
 
     const handleAdd = () => {
         updateDisplayModal(false);
-        props.dispatch(handleAddItem({ name: input }));
+        updateData(value.push(input))
+        // props.dispatch(handleAddItem({ name: input }));
         updateInput('');
     };
 
@@ -58,10 +58,3 @@ const AddItem = (props) => {
             </Button>
         </div>);
 };
-
-const mapStateToProps = (state) => {
-    return {
-        data: state.itemReducer.data
-    };
-};
-export default connect(mapStateToProps)(AddItem);

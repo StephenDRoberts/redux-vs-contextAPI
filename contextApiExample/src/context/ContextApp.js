@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import React, { useContext } from 'react';
+// import { DataContext } from './../App.js'
 
-const ReduxApp = (props) => {
+export const ContextApp = () => {
+    const value = useContext(DataContext)
 
     const renderHeaders = () => {
         return ( 
@@ -34,16 +34,8 @@ const ReduxApp = (props) => {
         <Table striped bordered hover className="redux-app col-6">
             {renderHeaders()}
             <tbody>
-                {renderData(props.data)}
+                {renderData(value)}
             </tbody>
         </Table>
     );
-};
-
-const mapStateToProps = (state) => {
-    return {
-        data: state.itemReducer.data
-    };
-};
-export default connect(mapStateToProps)(ReduxApp);
-
+}
