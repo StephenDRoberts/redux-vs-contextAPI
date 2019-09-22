@@ -1,15 +1,18 @@
-import React, { useStatem, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import DataContext from './context/ContextContainer';
 
-export const AddItem = () => {
+function AddItem(){
 
     const [displayModal, updateDisplayModal] = useState(false);
     const [input, updateInput] = useState('');
-    const { value, updateData } = useContext(DataContext)
+    const dataContext = useContext(DataContext)
+    console.log(dataContext)
 
     const handleAdd = () => {
+        
         updateDisplayModal(false);
-        updateData(value.push(input))
+        // updateData(value.push(input))
         // props.dispatch(handleAddItem({ name: input }));
         updateInput('');
     };
@@ -58,3 +61,5 @@ export const AddItem = () => {
             </Button>
         </div>);
 };
+
+export default AddItem

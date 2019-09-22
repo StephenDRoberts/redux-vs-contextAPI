@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
-// import { DataContext } from './../App.js'
+import DataContext from './ContextContainer.js'
+import { Table } from 'react-bootstrap';
 
-export const ContextApp = () => {
-    const value = useContext(DataContext)
+function ContextApp({ children }){
+    let value = useContext(DataContext)
+    console.log(value)
 
     const renderHeaders = () => {
         return ( 
@@ -39,3 +41,4 @@ export const ContextApp = () => {
         </Table>
     );
 }
+export default ContextApp;
