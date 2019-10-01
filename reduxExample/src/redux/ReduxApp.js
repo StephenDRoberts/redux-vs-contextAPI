@@ -1,8 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import {Button, Table} from 'react-bootstrap';
+import {handleDeleteItem} from "./modules/itemReducer";
 
 const ReduxApp = (props) => {
+
+    const deleteEntry =(itemIndex) => {
+        props.dispatch(handleDeleteItem(itemIndex));
+    }
 
     const renderHeaders = () => {
         return ( 
@@ -23,6 +28,9 @@ const ReduxApp = (props) => {
                 <tr index={index} key={`redux-${index}`} >
                     <td>{index}</td>
                     <td>{item}</td>
+                    <td><Button onClick={()=>deleteEntry(index)}>
+                        <i className="fas fa-trash"></i>
+                    </Button></td>
                 </tr>
             );
         });
